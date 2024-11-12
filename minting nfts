@@ -116,5 +116,6 @@ function transferNFT(uint _tokenId, address _newOwner) public {
 
     // Update owner's NFT collection arrays
     ownerNFTs[_newOwner].push(_tokenId);
+    ownerNFTs[msg.sender] = removeTokenIdFromList(ownerNFTs[msg.sender], _tokenId);
     
 }
